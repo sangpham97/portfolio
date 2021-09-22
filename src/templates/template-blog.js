@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@material-ui/core"
+import { Box, Container, Grid, Typography } from "@material-ui/core"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 import { graphql } from "gatsby"
@@ -6,6 +6,9 @@ import Layout from "../components/layout"
 import { navLinks2 } from "../util"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
+import LeftSide from "../components/LeftSide"
+import RightSide from "../components/RightSide"
+import ArcodianList from "../components/ArcodianList"
 
 export default function SingleBlog({ data }) {
   const blog = data.datoCmsBlog
@@ -19,11 +22,21 @@ export default function SingleBlog({ data }) {
           </Typography>
           <Typography variant="p">{blog.date}</Typography>
           <Box mt={3} mb={3}>
-            <GatsbyImage image={image} style={{ borderRadius: 3 }} />
-            <ReactMarkdown
-              children={blog.content}
-              remarkPlugins={[remarkGfm]}
-            />
+            <Grid container spacing="2">
+              <LeftSide>
+                <GatsbyImage
+                  image={image}
+                  style={{ borderRadius: 3, width: "100%" }}
+                />
+                <ReactMarkdown
+                  children={blog.content}
+                  remarkPlugins={[remarkGfm]}
+                />
+              </LeftSide>
+              <RightSide>
+                <ArcodianList />
+              </RightSide>
+            </Grid>
           </Box>
         </Box>
       </Container>
@@ -38,7 +51,7 @@ export const query = graphql`
       date(fromNow: true)
       title
       image {
-        gatsbyImageData(layout: FIXED, height: 500)
+        gatsbyImageData(layout: FIXED, height: 500, width: 300)
       }
     }
   }

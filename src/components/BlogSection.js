@@ -49,7 +49,7 @@ export default function BlogSection() {
             return <Blog {...blog} key={i} />
           })}
         </Grid>
-        <ButtonAll to="/Blogs">All Blog</ButtonAll>
+        <ButtonAll to="/Blogs" title="All Blog" />
       </Container>
     </Box>
   )

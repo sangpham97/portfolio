@@ -7,6 +7,7 @@ import {
   CardContent,
   Chip,
   Container,
+  Grid,
   makeStyles,
   Typography,
 } from "@material-ui/core"
@@ -14,6 +15,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { CardActions } from "@material-ui/core"
 import { navLinks2 } from "../util"
 import Layout from "../components/layout"
+import LeftSide from "../components/LeftSide"
+import RightSide from "../components/RightSide"
+import ArcodianList from "../components/ArcodianList"
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -55,36 +59,43 @@ export default function SingleProject({ data }) {
   return (
     <Layout Links={navLinks2}>
       <Box mt={5}>
-        <Container maxWidth="md">
-          <Card className={classes.card}>
-            <GatsbyImage image={image} className={classes.img} />
-            <div className={classes.wrapper}>
-              <CardContent className={classes.content}>
-                <Typography variant="h4" color="primary" gutterBottom>
-                  {project.title}
-                </Typography>
-                {categories.map((c, i) => (
-                  <Chip label={c} key={i} />
-                ))}
-                <Typography variant="p" className={classes.desc}>
-                  {project.desc}
-                </Typography>
+        <Container maxWidth="lg">
+          <Grid container spacing="2">
+            <LeftSide>
+              <Card className={classes.card}>
+                <GatsbyImage image={image} className={classes.img} />
+                <div className={classes.wrapper}>
+                  <CardContent className={classes.content}>
+                    <Typography variant="h4" color="primary" gutterBottom>
+                      {project.title}
+                    </Typography>
+                    {categories.map((c, i) => (
+                      <Chip label={c} key={i} />
+                    ))}
+                    <Typography variant="p" className={classes.desc}>
+                      {project.desc}
+                    </Typography>
 
-                <CardActions>
-                  <CardActionArea>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={classes.link}
-                    >
-                      View
-                    </a>
-                  </CardActionArea>
-                </CardActions>
-              </CardContent>
-            </div>
-          </Card>
+                    <CardActions>
+                      <CardActionArea>
+                        <a
+                          href={url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={classes.link}
+                        >
+                          View
+                        </a>
+                      </CardActionArea>
+                    </CardActions>
+                  </CardContent>
+                </div>
+              </Card>
+            </LeftSide>
+            <RightSide>
+              <ArcodianList />
+            </RightSide>
+          </Grid>
         </Container>
       </Box>
     </Layout>

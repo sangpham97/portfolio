@@ -20,13 +20,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-export default function ButtonAll({ children, to }) {
+export default function ButtonAll({ title, to }) {
   const classes = useStyles()
   return (
     <div className={classes.root}>
       <Button variant="contained" className={classes.button} color="primary">
         <Link to={to} className={classes.link}>
-          {children}
+          {title}
         </Link>
       </Button>
     </div>

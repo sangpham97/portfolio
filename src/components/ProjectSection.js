@@ -57,7 +57,7 @@ export default function ProjectSection() {
             return <Project {...project} key={i} git={git} Url={Url} />
           })}
         </Grid>
-        <ButtonAll to="/Projects">All Project</ButtonAll>
+        <ButtonAll to="/Projects" title="All Project" />
       </Container>
     </Box>
   )
