@@ -1,4 +1,4 @@
-import { Button, makeStyles } from "@material-ui/core"
+import { makeStyles, Typography } from "@material-ui/core"
 import React from "react"
 import { Link } from "gatsby"
 
@@ -11,8 +11,9 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1),
     marginTop: theme.spacing(5),
     borderRadius: 20,
-    fontSize: "1rem",
+    fontSize: "1.3rem",
     fontWeight: "bold",
+    backgroundColor: "teal",
   },
   link: {
     textDecoration: "none",
@@ -23,12 +24,12 @@ const useStyles = makeStyles(theme => ({
 export default function ButtonAll({ title, to }) {
   const classes = useStyles()
   return (
-    <div className={classes.root}>
-      <Button variant="contained" className={classes.button} color="primary">
+    <Typography align="center">
+      <button className={classes.button} color="primary">
         <Link to={to} className={classes.link}>
           {title}
         </Link>
-      </Button>
-    </div>
+      </button>
+    </Typography>
   )
 }
