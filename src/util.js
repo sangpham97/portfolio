@@ -12,7 +12,7 @@ export const navLinks1 = [
 export const navLinks2 = [
   {
     name: "Home",
-    icon: <ArrowBackIcon style={{ color: "white" }} />,
+    icon: <ArrowBackIcon style={{ color: "white", fontSize: "1.2rem" }} />,
     navigate: "/",
   },
 ]

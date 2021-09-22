@@ -35,6 +35,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       display: "block",
     },
+    fontSize: "1.2rem",
   },
   logo: {
     flexGrow: 1,
