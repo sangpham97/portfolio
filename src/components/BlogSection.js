@@ -1,5 +1,4 @@
 import {
-  Box,
   Card,
   CardContent,
   Container,
@@ -41,7 +40,7 @@ export default function BlogSection() {
   `)
   const blogs = data.allDatoCmsBlog.nodes
   return (
-    <Box mt={9} mb={5} id="Blog">
+    <div style={{ marginTop: 30, marginBottom: 30 }} id="Blog">
       <Container maxWidth="lg">
         <Title>New Blogs</Title>
         <Grid container spacing="2">
@@ -51,7 +50,7 @@ export default function BlogSection() {
         </Grid>
         <ButtonAll to="/Blogs" title="All Blog" />
       </Container>
-    </Box>
+    </div>
   )
 }
 

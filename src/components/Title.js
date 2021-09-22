@@ -1,9 +1,9 @@
-import { Box, Typography } from "@material-ui/core"
+import { Typography } from "@material-ui/core"
 import React from "react"
 
 export default function Title({ children }) {
   return (
-    <Box mt={4}>
+    <>
       <Typography
         variant="h3"
         color="primary"
@@ -13,6 +13,6 @@ export default function Title({ children }) {
       >
         {children}
       </Typography>
-    </Box>
+    </>
   )
 }

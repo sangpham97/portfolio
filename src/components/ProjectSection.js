@@ -46,7 +46,7 @@ export default function ProjectSection() {
   `)
   const projects = data.allDatoCmsProject.nodes
   return (
-    <Box mt={8} id="Project">
+    <div id="Project" style={{ marginTop: 30, marginBottom: 30 }}>
       <Container maxWidth="lg">
         <Title>New Projects</Title>
         <Grid container spacing="2" style={{ marginTop: 4 }}>
@@ -59,7 +59,7 @@ export default function ProjectSection() {
         </Grid>
         <ButtonAll to="/Projects" title="All Project" />
       </Container>
-    </Box>
+    </div>
   )
 }
 
