@@ -1,35 +1,24 @@
-import { makeStyles, Typography } from "@material-ui/core"
+import { Typography } from "@material-ui/core"
 import React from "react"
 import { Link } from "gatsby"
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  button: {
-    padding: theme.spacing(1),
-    marginTop: theme.spacing(5),
-    borderRadius: 20,
-    fontSize: "1.3rem",
-    fontWeight: "bold",
-    backgroundColor: "teal",
-  },
-  link: {
-    textDecoration: "none",
-    color: "white",
-  },
-}))
-
 export default function ButtonAll({ title, to }) {
-  const classes = useStyles()
   return (
-    <Typography align="center">
-      <button className={classes.button} color="primary">
-        <Link to={to} className={classes.link}>
-          {title}
-        </Link>
-      </button>
+    <Typography align="center" style={{ marginTop: 30 }}>
+      <Link
+        to={to}
+        style={{
+          padding: 10,
+          borderRadius: 20,
+          fontSize: "1.3rem",
+          fontWeight: "bold",
+          backgroundColor: "teal",
+          textDecoration: "none",
+          color: "white",
+        }}
+      >
+        {title}
+      </Link>
     </Typography>
   )
 }
