@@ -30,7 +30,7 @@ export default function BlogSection() {
         nodes {
           date(fromNow: true)
           image {
-            gatsbyImageData(layout: FIXED, height: 200)
+            gatsbyImageData(layout: FIXED, height: 180)
           }
           title
           slug

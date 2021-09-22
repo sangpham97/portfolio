@@ -26,7 +26,6 @@ const useStyles = makeStyles(theme => ({
       justifyContent: "center",
       alignItems: "center",
     },
-    padding: theme.spacing(2),
   },
   wrapper: {
     display: "flex",
@@ -40,9 +39,12 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.primary,
     fontSize: "1.2rem",
   },
-  // img: {
-  //   width: "100%",
-  // },
+  img: {
+    [theme.breakpoints.down("sm")]: {
+      padding: theme.spacing(2),
+      width: "100%",
+    },
+  },
   desc: {
     display: "block",
     marginTop: theme.spacing(2),

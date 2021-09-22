@@ -1,5 +1,4 @@
 import {
-  Box,
   Card,
   CardActionArea,
   CardActions,
@@ -38,7 +37,7 @@ export default function ProjectSection() {
           slug
           url
           image {
-            gatsbyImageData(layout: FIXED, height: 250)
+            gatsbyImageData(layout: FIXED, height: 180)
           }
         }
       }
@@ -74,7 +73,7 @@ export const Project = ({ categories, title, slug, Url, git, image }) => {
         <Card>
           <GatsbyImage image={Image} alt="image" style={{ width: "100%" }} />
           <CardContent className={classes.CardContent}>
-            <Typography variant="h5" gutterBottom color="primary">
+            <Typography variant="h6" gutterBottom color="primary">
               <Link to={`/Projects/${slug}`} style={{ textDecoration: "none" }}>
                 {title}
               </Link>

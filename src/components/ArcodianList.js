@@ -6,6 +6,9 @@ import { useStaticQuery, graphql } from "gatsby"
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: theme.spacing(3),
+    },
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),

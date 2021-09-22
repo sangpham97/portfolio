@@ -27,7 +27,7 @@ export default function Slider() {
     >
       {ImagesSlider.map((item, i) => (
         <SwiperSlide>
-          <CardMedia src={item.img} key={i} component="img" height={500} />
+          <CardMedia src={item.img} key={i} component="img" height={340} />
         </SwiperSlide>
       ))}
     </Swiper>
