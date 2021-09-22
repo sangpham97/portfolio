@@ -1,7 +1,7 @@
 import * as React from "react"
 
 import Layout from "../components/layout"
-import { navLinks1 } from "../util"
+import { navLinks2 } from "../util"
 
 const NotFoundPage = () => (
   <Layout Links={navLinks2}>
