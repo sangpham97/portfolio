@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import { navLinks1 } from "../util"
 
 const NotFoundPage = () => (
-  <Layout Links={navLinks1}>
+  <Layout Links={navLinks2}>
     <h1>404: Not Found</h1>
   </Layout>
 )
