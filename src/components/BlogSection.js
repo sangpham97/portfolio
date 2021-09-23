@@ -14,6 +14,7 @@ import ButtonAll from "./Button"
 
 const useStyles = makeStyles(theme => ({
   cardContent: {
+    minHeight: 250,
     [theme.breakpoints.down("md")]: {
       height: 160,
     },
@@ -64,7 +65,7 @@ export const Blog = ({ title, date, image, slug }) => {
         <Card>
           <GatsbyImage image={Image} alt="image" style={{ width: "100%" }} />
           <CardContent className={classes.CardContent}>
-            <Typography variant="h5" gutterBottom color="primary">
+            <Typography variant="h6" gutterBottom color="primary">
               <Link to={"/Blogs/" + slug} style={{ textDecoration: "none" }}>
                 {title}
               </Link>

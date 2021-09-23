@@ -69,7 +69,7 @@ export const Project = ({ categories, title, slug, Url, git, image }) => {
   console.log(Url)
   return (
     <>
-      <Grid item md={4} sm={6} xs={12}>
+      <Grid item md={3} sm={6} xs={12}>
         <Card>
           <GatsbyImage image={Image} alt="image" style={{ width: "100%" }} />
           <CardContent className={classes.CardContent}>
