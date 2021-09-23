@@ -12,7 +12,7 @@ import {
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 import Title from "./Title"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import ButtonAll from "./Button"
 
 const useStyles = makeStyles(theme => ({
@@ -66,7 +66,6 @@ export const Project = ({ categories, title, slug, Url, git, image }) => {
   const classes = useStyles()
   const Image = getImage(image)
   const Categories = Object.values(JSON.parse(categories))
-  console.log(Url)
   return (
     <>
       <Grid item md={3} sm={6} xs={12}>
