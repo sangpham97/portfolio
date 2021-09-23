@@ -36,21 +36,12 @@ export default function Arcodian({ type, data }) {
           {data.map((item, i) => {
             return (
               <ListItem key={i}>
-                {type === "Projects" ? (
-                  <Link
-                    to={"/Projects/" + item.slug}
-                    style={{ textDecoration: "none" }}
-                  >
-                    {item.title}
-                  </Link>
-                ) : (
-                  <Link
-                    to={"/Blogs/" + item.slug}
-                    style={{ textDecoration: "none" }}
-                  >
-                    {item.title}
-                  </Link>
-                )}
+                <Link
+                  to={"/Blogs/" + item.slug}
+                  style={{ textDecoration: "none" }}
+                >
+                  {item.title}
+                </Link>
               </ListItem>
             )
           })}
