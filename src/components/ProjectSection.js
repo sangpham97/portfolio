@@ -74,9 +74,7 @@ export const Project = ({ categories, title, slug, Url, git, image }) => {
           <GatsbyImage image={Image} alt="image" style={{ width: "100%" }} />
           <CardContent className={classes.CardContent}>
             <Typography variant="h6" gutterBottom color="primary">
-              <Link to={`/Projects/${slug}`} style={{ textDecoration: "none" }}>
-                {title}
-              </Link>
+              {title}
             </Typography>
             {Categories.map((c, i) => (
               <Chip
