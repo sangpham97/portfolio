@@ -19,12 +19,6 @@ const useStyles = makeStyles(theme => ({
 export default function ArcodianList() {
   const data = useStaticQuery(graphql`
     {
-      Projects: allDatoCmsProject {
-        nodes {
-          title
-          slug
-        }
-      }
       Blogs: allDatoCmsBlog {
         nodes {
           title
@@ -35,10 +29,9 @@ export default function ArcodianList() {
   `)
   const classes = useStyles()
   const blogs = data.Blogs.nodes
-  const projects = data.Projects.nodes
+
   return (
     <div className={classes.root}>
-      <Arcodian type="Projects" data={projects} />
       <Arcodian type="Blogs" data={blogs} />
     </div>
   )
