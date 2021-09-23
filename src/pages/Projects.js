@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from "@material-ui/core"
+import { Container, Grid } from "@material-ui/core"
 import React from "react"
 import Title from "../components/Title"
 import { graphql } from "gatsby"
@@ -13,7 +13,7 @@ export default function Projects({ data }) {
   const projects = data.allDatoCmsProject.nodes
   return (
     <Layout Links={navLinks2}>
-      <Box mt={3}>
+      <div style={{ margin: "30px 0" }}>
         <Container maxWidth="lg">
           <Title>All Project</Title>
           <Grid container spacing="2">
@@ -29,7 +29,7 @@ export default function Projects({ data }) {
             </RightSide>
           </Grid>
         </Container>
-      </Box>
+      </div>
     </Layout>
   )
 }
@@ -45,7 +45,7 @@ export const query = graphql`
         gitlink
         url
         image {
-          gatsbyImageData(layout: FIXED, height: 150)
+          gatsbyImageData(layout: FIXED, height: 200, width: 225)
         }
       }
     }

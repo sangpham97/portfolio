@@ -1,27 +1,22 @@
-import ArrowBackIcon from "@material-ui/icons/ArrowBack"
 import React from "react"
-import img1 from "./images/photo-1.png"
-import img2 from "./images/photo-2.png"
-
-export const navLinks1 = [
-  { name: "About", link: "#About" },
-  { name: "Blog", link: "#Blog" },
-  { name: "Project", link: "#Project" },
-]
+import WebIcon from "@material-ui/icons/Web"
+import HomeIcon from "@material-ui/icons/Home"
+import LocalLibraryIcon from "@material-ui/icons/LocalLibrary"
 
 export const navLinks2 = [
   {
     name: "Home",
-    icon: <ArrowBackIcon style={{ color: "white" }} />,
+    icon: <HomeIcon style={{ color: "teal" }} />,
     navigate: "/",
   },
-]
-
-export const ImagesSlider = [
   {
-    img: img1,
+    name: "Blog",
+    icon: <LocalLibraryIcon style={{ color: "teal" }} />,
+    navigate: "/Blogs",
   },
   {
-    img: img2,
+    name: "Project",
+    icon: <WebIcon style={{ color: "teal" }} />,
+    navigate: "/Projects",
   },
 ]

@@ -3,7 +3,6 @@ import {
   CardContent,
   Container,
   Grid,
-  makeStyles,
   Typography,
 } from "@material-ui/core"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -11,15 +10,6 @@ import React from "react"
 import Title from "./Title"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import ButtonAll from "./Button"
-
-const useStyles = makeStyles(theme => ({
-  cardContent: {
-    minHeight: 250,
-    [theme.breakpoints.down("md")]: {
-      height: 160,
-    },
-  },
-}))
 
 export default function BlogSection() {
   const data = useStaticQuery(graphql`
@@ -42,7 +32,7 @@ export default function BlogSection() {
   const blogs = data.allDatoCmsBlog.nodes
   return (
     <div style={{ marginTop: 30, marginBottom: 30 }} id="Blog">
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <Title>New Blogs</Title>
         <Grid container spacing="2">
           {blogs.map((blog, i) => {
@@ -56,7 +46,6 @@ export default function BlogSection() {
 }
 
 export const Blog = ({ title, date, image, slug }) => {
-  const classes = useStyles()
   const Image = getImage(image)
 
   return (
@@ -64,8 +53,8 @@ export const Blog = ({ title, date, image, slug }) => {
       <Grid item md={4} sm={6} xs={12}>
         <Card>
           <GatsbyImage image={Image} alt="image" style={{ width: "100%" }} />
-          <CardContent className={classes.CardContent}>
-            <Typography variant="h6" gutterBottom color="primary">
+          <CardContent style={{ minHeight: 160 }}>
+            <Typography gutterBottom color="primary">
               <Link to={"/Blogs/" + slug} style={{ textDecoration: "none" }}>
                 {title}
               </Link>

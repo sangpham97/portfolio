@@ -1,7 +1,7 @@
 import React from "react"
 import { Blog } from "../components/BlogSection"
 import { graphql } from "gatsby"
-import { Box, Container, Grid } from "@material-ui/core"
+import { Container, Grid } from "@material-ui/core"
 import Title from "../components/Title"
 import { navLinks2 } from "../util"
 import Layout from "../components/layout"
@@ -13,7 +13,7 @@ export default function Blogs({ data }) {
   const blogs = data.allDatoCmsBlog.nodes
   return (
     <Layout Links={navLinks2}>
-      <Box mt={5}>
+      <div style={{ margin: "30px 0 " }}>
         <Container maxWidth="lg">
           <Title>All Blog</Title>
           <Grid container spacing="2">
@@ -27,7 +27,7 @@ export default function Blogs({ data }) {
             </RightSide>
           </Grid>
         </Container>
-      </Box>
+      </div>
     </Layout>
   )
 }

@@ -9,7 +9,7 @@ export default function Title({ children }) {
         color="primary"
         align="center"
         gutterBottom
-        style={{ textDecoration: "underline" }}
+        style={{ textDecoration: "underline", marginTop: 30 }}
       >
         {children}
       </Typography>

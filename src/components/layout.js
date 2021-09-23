@@ -4,10 +4,10 @@ import Footer from "./Footer"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children, Links }) => {
+const Layout = ({ children }) => {
   return (
     <>
-      <Header Links={Links} />
+      <Header />
       <div
         style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
       >
