@@ -9,11 +9,6 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
         }
       }
-      projects: allDatoCmsProject {
-        nodes {
-          slug
-        }
-      }
     }
   `)
 
@@ -21,16 +16,6 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/Blogs/${node.slug}`,
       component: path.resolve(`src/templates/template-blog.js`),
-      context: {
-        slug: node.slug,
-      },
-    })
-  })
-
-  result.data.projects.nodes.forEach(node => {
-    createPage({
-      path: `/Projects/${node.slug}`,
-      component: path.resolve(`src/templates/template-project.js`),
       context: {
         slug: node.slug,
       },
