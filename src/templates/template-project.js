@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import {
-  Box,
   Card,
   CardActionArea,
   CardContent,
@@ -20,6 +19,9 @@ import RightSide from "../components/RightSide"
 import ArcodianList from "../components/ArcodianList"
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    marginTop: theme.spacing(5),
+  },
   card: {
     [theme.breakpoints.up("sm")]: {
       display: "flex",
@@ -60,7 +62,7 @@ export default function SingleProject({ data }) {
   const image = getImage(project.image)
   return (
     <Layout Links={navLinks2}>
-      <Box mt={5}>
+      <div className={classes.root}>
         <Container maxWidth="lg">
           <Grid container spacing="2">
             <LeftSide>
@@ -77,7 +79,6 @@ export default function SingleProject({ data }) {
                     <Typography variant="p" className={classes.desc}>
                       {project.desc}
                     </Typography>
-
                     <CardActions>
                       <CardActionArea>
                         <a
@@ -99,7 +100,7 @@ export default function SingleProject({ data }) {
             </RightSide>
           </Grid>
         </Container>
-      </Box>
+      </div>
     </Layout>
   )
 }
