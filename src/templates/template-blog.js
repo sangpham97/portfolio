@@ -1,45 +1,26 @@
-import { Box, Container, Grid, Typography } from "@material-ui/core"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { navLinks2 } from "../util"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
-import LeftSide from "../components/LeftSide"
-import RightSide from "../components/RightSide"
-import ArcodianList from "../components/ArcodianList"
 
 export default function SingleBlog({ data }) {
   const blog = data.datoCmsBlog
   const image = getImage(blog.image)
   return (
-    <Layout Links={navLinks2}>
-      <Container maxWidth="lg">
-        <Box mt={5}>
-          <Typography variant="h4" color="primary">
-            {blog.title}
-          </Typography>
-          <Typography variant="p">{blog.date}</Typography>
-          <Box mt={3} mb={3}>
-            <Grid container spacing="2">
-              <LeftSide>
-                <GatsbyImage
-                  image={image}
-                  style={{ borderRadius: 3, width: "100%" }}
-                />
-                <ReactMarkdown
-                  children={blog.content}
-                  remarkPlugins={[remarkGfm]}
-                />
-              </LeftSide>
-              <RightSide>
-                <ArcodianList />
-              </RightSide>
-            </Grid>
-          </Box>
-        </Box>
-      </Container>
+    <Layout>
+      <div className="mx-auto max-w-screen-lg mt-10">
+        <h4 className="text-4xl capitalize font-mono">{blog.title}</h4>
+        <p className="text-gray-500">{blog.date}</p>
+        <div>
+          <GatsbyImage
+            image={image}
+            style={{ borderRadius: 3, width: "100%" }}
+          />
+          <ReactMarkdown children={blog.content} remarkPlugins={[remarkGfm]} />
+        </div>
+      </div>
     </Layout>
   )
 }
@@ -51,7 +32,7 @@ export const query = graphql`
       date(fromNow: true)
       title
       image {
-        gatsbyImageData(layout: FIXED, height: 500, width: 300)
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

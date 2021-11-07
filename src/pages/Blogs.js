@@ -1,32 +1,23 @@
 import React from "react"
 import { Blog } from "../components/BlogSection"
 import { graphql } from "gatsby"
-import { Container, Grid } from "@material-ui/core"
 import Title from "../components/Title"
-import { navLinks2 } from "../util"
 import Layout from "../components/layout"
-import ArcodianList from "../components/ArcodianList"
-import LeftSide from "../components/LeftSide"
-import RightSide from "../components/RightSide"
 
 export default function Blogs({ data }) {
   const blogs = data.allDatoCmsBlog.nodes
+
   return (
-    <Layout Links={navLinks2}>
-      <div style={{ margin: "30px 0 " }}>
-        <Container maxWidth="lg">
-          <Title>All Blog</Title>
-          <Grid container spacing="2">
-            <LeftSide>
-              {blogs.map((blog, i) => {
-                return <Blog {...blog} key={i} />
-              })}
-            </LeftSide>
-            <RightSide>
-              <ArcodianList {...blogs} />
-            </RightSide>
-          </Grid>
-        </Container>
+    <Layout>
+      <div className="mx-auto max-w-screen-lg mt-10">
+        <div className="text-center">
+          <Title>All Blogs</Title>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-5">
+          {blogs.map((item, i) => (
+            <Blog {...item} key={i} />
+          ))}
+        </div>
       </div>
     </Layout>
   )
@@ -38,7 +29,7 @@ export const query = graphql`
       nodes {
         date(fromNow: true)
         image {
-          gatsbyImageData(layout: FIXED, height: 150)
+          gatsbyImageData(layout: CONSTRAINED)
         }
         title
         slug

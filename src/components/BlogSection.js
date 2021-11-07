@@ -1,10 +1,3 @@
-import {
-  Card,
-  CardContent,
-  Container,
-  Grid,
-  Typography,
-} from "@material-ui/core"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 import Title from "./Title"
@@ -21,7 +14,7 @@ export default function BlogSection() {
         nodes {
           date(fromNow: true)
           image {
-            gatsbyImageData(layout: FIXED, height: 180)
+            gatsbyImageData(layout: CONSTRAINED)
           }
           title
           slug
@@ -31,16 +24,21 @@ export default function BlogSection() {
   `)
   const blogs = data.allDatoCmsBlog.nodes
   return (
-    <div style={{ marginTop: 30, marginBottom: 30 }} id="Blog">
-      <Container maxWidth="md">
-        <Title>New Blogs</Title>
-        <Grid container spacing="2">
-          {blogs.map((blog, i) => {
-            return <Blog {...blog} key={i} />
-          })}
-        </Grid>
-        <ButtonAll to="/Blogs" title="All Blog" />
-      </Container>
+    <div className="max-w-screen-lg mx-auto ">
+      <Title>
+        I have{" "}
+        <span className="text-red-700 border-red-700 border-b-4 pb-1">
+          Blogs
+        </span>
+      </Title>
+      <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-5">
+        {blogs.map((item, i) => (
+          <Blog {...item} key={i} />
+        ))}
+      </div>
+      <div className="text-center my-10">
+        <ButtonAll title="all blogs" to="/Blogs" />
+      </div>
     </div>
   )
 }
@@ -49,20 +47,14 @@ export const Blog = ({ title, date, image, slug }) => {
   const Image = getImage(image)
 
   return (
-    <>
-      <Grid item md={4} sm={6} xs={12}>
-        <Card>
-          <GatsbyImage image={Image} alt="image" style={{ width: "100%" }} />
-          <CardContent style={{ minHeight: 160 }}>
-            <Typography gutterBottom color="primary">
-              <Link to={"/Blogs/" + slug} style={{ textDecoration: "none" }}>
-                {title}
-              </Link>
-            </Typography>
-            <Typography>{date}</Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-    </>
+    <Link className="col-span-1 space-y-2" to={"/Blogs/" + slug}>
+      <div className="lg:w-64 h-36">
+        <GatsbyImage image={Image} className="w-full h-full" />
+      </div>
+      <div className="space-y-2">
+        <h4 className="text-red-700 text-md font-serif">{title}</h4>
+        <p className="text-gray-600">{date}</p>
+      </div>
+    </Link>
   )
 }

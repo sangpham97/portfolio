@@ -1,32 +1,9 @@
-import { Box, Container, Typography } from "@material-ui/core"
 import React from "react"
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary">
-      {"Copyright © "}
-      Sang Phạm ({new Date().getFullYear()})
-    </Typography>
-  )
-}
 
 export default function Footer() {
   return (
-    <Box
-      component="footer"
-      sx={{
-        py: 3,
-        px: 2,
-        mt: "auto",
-        backgroundColor: "#4caf50",
-      }}
-    >
-      <Container maxWidth="sm">
-        <Typography variant="body1" align="center">
-          Designed By Sang
-          <Copyright />
-        </Typography>
-      </Container>
-    </Box>
+    <div className="text-center my-10 pt-10 border-t-2 border-gray-200">
+      <h4 className="text-4xl font-serif">Sang Blog</h4>
+    </div>
   )
 }
