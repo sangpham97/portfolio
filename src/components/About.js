@@ -11,9 +11,8 @@ export default function About() {
               hi! i'm sang
             </h4>
             <p className="text-gray-700 leading-relaxed text-lg tracking-wide">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              quia assumenda necessitatibus magnam corrupti alias asperiores
-              animi, id eligendi aliquid!
+              Hi! Mình là Phạm Thanh Sang đang tự học và vọc vạch thiết kế web
+              đặc biệt thích làm việc với
               <span className="font-bold"> React</span>
             </p>
           </div>

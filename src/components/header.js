@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
 import { navLinks2 } from "../util"
-import Title from "./Title"
 
 export default function Header() {
   return (
