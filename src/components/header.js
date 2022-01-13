@@ -6,7 +6,10 @@ export default function Header() {
   return (
     <div className="mx-auto max-w-screen-md mt-20">
       <div className="text-center space-y-4">
-        <h4 className="text-5xl font-bold text-gray-800"> Phạm Thanh Sang</h4>
+        <Link className="text-5xl font-bold text-gray-800" to="/">
+          {" "}
+          Phạm Thanh Sang
+        </Link>
         <h5 className="text-3xl font-serif text-gray-600">
           A Front-End Web Developer
         </h5>

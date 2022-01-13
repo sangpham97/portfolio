@@ -1,7 +1,7 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
 import Title from "./Title"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 import ButtonAll from "./Button"
 
 export default function ProjectSection() {
@@ -31,9 +31,12 @@ export default function ProjectSection() {
     <div id="Project" className="mx-auto max-w-screen-lg mt-20">
       <Title>
         I have{" "}
-        <span className="text-red-700 border-red-700 border-b-4 pb-1">
+        <Link
+          className="text-red-700 border-red-700 border-b-4 pb-1"
+          to="/Projects"
+        >
           Projects
-        </span>{" "}
+        </Link>{" "}
       </Title>
       <div className="space-y-3 mt-10">
         {projects.map((project, i) => {
@@ -55,10 +58,15 @@ export const Project = ({ categories, title, desc, Url, git, image }) => {
   const Categories = Object.values(JSON.parse(categories))
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-start ">
-      <div className="w-full h-80 lg:w-72 md:h-52">
+    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-start">
+      <a
+        className="w-full h-80 lg:w-72 md:h-52"
+        href={Url}
+        target="_blank"
+        rel="noreferrer"
+      >
         <GatsbyImage image={Image} className="w-full h-full" />
-      </div>
+      </a>
       <div className="space-y-2 lg:ml-10">
         <h4 className="text-red-600 text-2xl font-mono">{title}</h4>
         <p className="text-gray-700">{desc}</p>
@@ -74,7 +82,7 @@ export const Project = ({ categories, title, desc, Url, git, image }) => {
             href={Url}
             target="_blank"
             rel="noreferrer"
-            className="text-blue-600 hover:bg-blue-600 hover:text-white p-1 rounded-sm"
+            className="text-blue-600 hover:text-blue-900 "
           >
             Web
           </a>
@@ -82,7 +90,7 @@ export const Project = ({ categories, title, desc, Url, git, image }) => {
             href={git}
             target="_blank"
             rel="noreferrer"
-            className="text-blue-700 hover:bg-blue-700 hover:text-white p-1 rounded-md"
+            className="text-blue-600 hover:text-blue-900 "
           >
             GitHub code
           </a>

@@ -12,7 +12,6 @@ export default function BlogSection() {
         sort: { fields: image___createdAt, order: DESC }
       ) {
         nodes {
-          date(fromNow: true)
           image {
             gatsbyImageData(layout: CONSTRAINED)
           }
@@ -27,9 +26,12 @@ export default function BlogSection() {
     <div className="max-w-screen-lg mx-auto ">
       <Title>
         I have{" "}
-        <span className="text-red-700 border-red-700 border-b-4 pb-1">
+        <Link
+          className="text-red-700 border-red-700 border-b-4 pb-1"
+          to="/Blogs"
+        >
           Blogs
-        </span>
+        </Link>
       </Title>
       <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-5">
         {blogs.map((item, i) => (
@@ -43,7 +45,7 @@ export default function BlogSection() {
   )
 }
 
-export const Blog = ({ title, date, image, slug }) => {
+export const Blog = ({ title, image, slug }) => {
   const Image = getImage(image)
 
   return (
@@ -52,8 +54,13 @@ export const Blog = ({ title, date, image, slug }) => {
         <GatsbyImage image={Image} className="w-full h-full" />
       </div>
       <div className="space-y-2">
-        <h4 className="text-red-700 text-md font-serif">{title}</h4>
-        <p className="text-gray-600">{date}</p>
+        {title.length > 65 ? (
+          <h4 className="text-red-700 text-md font-serif">
+            {`${title.substring(0, 65)}...`}
+          </h4>
+        ) : (
+          <h4 className="text-red-700 text-md font-serif">{title}</h4>
+        )}
       </div>
     </Link>
   )
