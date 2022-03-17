@@ -3,8 +3,10 @@ import React from "react"
 import { navLinks2 } from "../util"
 
 export default function Header() {
+  const isBrowser = () => typeof window !== "undefined"
+  
   function activeLinkStyle(link) {
-    if (link === window.location.pathname) {
+    if (isBrowser() && link === window.location.pathname) {
       return "active_link mx-3 uppercase py-2"
     } else {
       return "mx-3 uppercase border_link py-2"
