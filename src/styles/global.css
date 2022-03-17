@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.border_link:hover {
+  border-bottom: 4px solid #ef4444;
+  padding-bottom: 1px;
+}
+
+.active_link {
+  border-bottom: 4px solid #ef4444;
+  padding-bottom: 1px;
+}

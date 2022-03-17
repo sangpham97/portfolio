@@ -60,12 +60,12 @@ export const Project = ({ categories, title, desc, Url, git, image }) => {
   return (
     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-start">
       <a
-        className="w-full h-80 lg:w-72 md:h-52"
+        className="w-full h-80 lg:w-60 md:h-52"
         href={Url}
         target="_blank"
         rel="noreferrer"
       >
-        <GatsbyImage image={Image} className="w-full h-full" />
+        <GatsbyImage image={Image} className="w-full h-full rounded-md" />
       </a>
       <div className="space-y-2 lg:ml-10">
         <h4 className="text-red-600 text-2xl font-mono">{title}</h4>

@@ -3,9 +3,17 @@ import React from "react"
 import { navLinks2 } from "../util"
 
 export default function Header() {
+  function activeLinkStyle(link) {
+    if (link === window.location.pathname) {
+      return "active_link mx-3 uppercase py-2"
+    } else {
+      return "mx-3 uppercase border_link py-2"
+    }
+  }
+
   return (
-    <div className="mx-auto max-w-screen-md mt-20">
-      <div className="text-center space-y-4">
+    <div className="mx-auto max-w-screen-md mt-20 min-h-52">
+      <div className="text-center space-y-4 pb-5">
         <Link className="text-5xl font-bold text-gray-800" to="/">
           {" "}
           Phạm Thanh Sang
@@ -15,7 +23,7 @@ export default function Header() {
         </h5>
         <ul className="flex justify-center text-md font-semibold">
           {navLinks2.map((item, i) => (
-            <li key={i} className="mx-3 border-b-2 border-red-500 uppercase">
+            <li key={i} className={activeLinkStyle(item.navigate)}>
               <Link to={item.navigate}>{item.name}</Link>
             </li>
           ))}
