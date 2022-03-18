@@ -51,7 +51,7 @@ export const Blog = ({ title, image, slug }) => {
   return (
     <Link className="col-span-1 space-y-2" to={"/Blogs/" + slug}>
       <div className="lg:w-64 h-36">
-        <GatsbyImage image={Image} className="w-full h-full" />
+        <GatsbyImage image={Image} className="w-full h-full rounded-md" />
       </div>
       <div className="space-y-2">
         {title.length > 65 ? (

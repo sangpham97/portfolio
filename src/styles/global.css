@@ -11,3 +11,8 @@
   border-bottom: 4px solid #ef4444;
   padding-bottom: 1px;
 }
+
+.border_link {
+  border-bottom: 4px solid white;
+  transition: border-bottom 0.2s ease-in;
+}

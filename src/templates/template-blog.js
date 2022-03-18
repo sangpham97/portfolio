@@ -12,8 +12,8 @@ export default function SingleBlog({ data }) {
   return (
     <Layout>
       <Seo title={"SangBlog | " + blog.title} description={blog.title} />
-      <div className="mx-auto max-w-screen-lg mt-10">
-        <h4 className="text-xl capitalize font-mono md:text-4xl">
+      <div className="mx-auto max-w-screen-lg mt-10 min-h-screen">
+        <h4 className="text-xl capitalize font-serif md:text-3xl mb-3 underline">
           {blog.title}
         </h4>
         <div>

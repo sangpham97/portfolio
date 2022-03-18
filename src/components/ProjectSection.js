@@ -67,7 +67,7 @@ export const Project = ({ categories, title, desc, Url, git, image }) => {
       >
         <GatsbyImage image={Image} className="w-full h-full rounded-md" />
       </a>
-      <div className="space-y-2 lg:ml-10">
+      <div className="space-y-3 lg:ml-10">
         <h4 className="text-red-600 text-2xl font-mono">{title}</h4>
         <p className="text-gray-700">{desc}</p>
         <ul className="flex text-white space-x-3">

@@ -14,7 +14,11 @@ export default function Blogs({ data }) {
         title="SangBlog | Blogs"
         description="Đây là trang blog của tôi ,tất cả các blog đã làm"
       />
-      <div className="mx-auto max-w-screen-lg mt-10">
+      <div
+        className="mx-auto max-w-screen-lg mt-10 min-h-screen
+      
+      "
+      >
         <div className="text-center">
           <Title>All Blogs</Title>
         </div>
