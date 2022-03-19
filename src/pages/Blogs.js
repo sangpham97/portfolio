@@ -20,7 +20,7 @@ export default function Blogs({ data }) {
           <Title>All Blogs</Title>
           <StaticImage src="../images/underline.jpg" className=" h-16" alt="" />
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 mt-10 gap-4">
           {blogs.map((item, i) => (
             <Blog {...item} key={i} />
           ))}

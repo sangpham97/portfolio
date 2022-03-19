@@ -49,7 +49,7 @@ export const Blog = ({ title, image, slug }) => {
   const Image = getImage(image)
 
   return (
-    <Link className="lg:col-span-1 space-y-2" to={"/Blogs/" + slug}>
+    <Link className="col-span-1 space-y-2" to={"/Blogs/" + slug}>
       <div className="lg:w-full h-48">
         <GatsbyImage
           image={Image}
