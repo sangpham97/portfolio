@@ -15,9 +15,9 @@ export default function Projects({ data }) {
         description="Đây là trang tất cả project của tôi"
       />
       <div className="mx-auto max-w-screen-lg">
-        <div className="text-center my-10">
+        <div className="text-center my-20">
           <Title>All Projects</Title>
-          <StaticImage src="../images/underline.jpg" className=" h-16" />
+          <StaticImage src="../images/underline.jpg" className=" h-16" alt="" />
         </div>
         <div className="space-y-3">
           {projects.map((project, i) => {

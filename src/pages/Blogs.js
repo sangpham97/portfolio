@@ -15,10 +15,10 @@ export default function Blogs({ data }) {
         title="SangBlog | Blogs"
         description="Đây là trang blog của tôi ,tất cả các blog đã làm"
       />
-      <div className="mx-auto max-w-screen-lg mt-10 min-h-screen">
+      <div className="mx-auto max-w-screen-lg my-20 min-h-screen">
         <div className="text-center ">
           <Title>All Blogs</Title>
-          <StaticImage src="../images/underline.jpg" className=" h-16" />
+          <StaticImage src="../images/underline.jpg" className=" h-16" alt="" />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-4">
           {blogs.map((item, i) => (

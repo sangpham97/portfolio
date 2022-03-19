@@ -65,7 +65,11 @@ export const Project = ({ categories, title, desc, Url, git, image }) => {
         target="_blank"
         rel="noreferrer"
       >
-        <GatsbyImage image={Image} className="w-full h-full rounded-md" />
+        <GatsbyImage
+          image={Image}
+          className="w-full h-full rounded-md"
+          alt={title}
+        />
       </a>
       <div className="space-y-3 lg:ml-10">
         <h4 className="text-red-600 text-2xl font-mono">{title}</h4>

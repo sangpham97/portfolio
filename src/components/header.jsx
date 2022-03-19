@@ -3,19 +3,19 @@ import React from "react"
 import { navLinks2 } from "../util"
 
 export default function Header() {
-  const isBrowser = () => typeof window !== "undefined"
+  // const isBrowser = () => typeof window !== "undefined"
 
-  function activeLinkStyle(link) {
-    if (isBrowser()) {
-      if (link === window.location.pathname) {
-        return "active_link mx-3 uppercase py-2"
-      } else {
-        return "mx-3 uppercase border_link py-2"
-      }
-    } else {
-      return "mx-3 uppercase border_link py-2"
-    }
-  }
+  // function activeLinkStyle(link) {
+  //   if (isBrowser()) {
+  //     if (link === window.location.pathname) {
+  //       return "active_link mx-3 uppercase py-2"
+  //     } else {
+  //       return "mx-3 uppercase border_link py-2"
+  //     }
+  //   } else {
+  //     return "mx-3 uppercase border_link py-2"
+  //   }
+  // }
 
   return (
     <div className="mx-auto max-w-screen-md pt-10 min-h-52">
@@ -29,12 +29,28 @@ export default function Header() {
         </h5>
         <ul className="flex justify-center text-md font-semibold">
           {navLinks2.map((item, i) => (
-            <li key={i} className={activeLinkStyle(item.navigate)}>
-              <Link to={item.navigate}>{item.name}</Link>
+            <li key={i} className="text-xl">
+              <PartialNavLink to={item.navigate}>{item.name}</PartialNavLink>
             </li>
           ))}
         </ul>
       </div>
     </div>
   )
+}
+
+export const PartialNavLink = props => {
+  const isPartiallyActive = ({ isPartiallyCurrent }) => {
+    if (props.to === "/") {
+      return {
+        className: " mx-3 uppercase py-2 text-red-500",
+      }
+    } else {
+      return isPartiallyCurrent
+        ? { className: "active_link mx-3 uppercase py-2" }
+        : { className: "mx-3 uppercase border_link py-2" }
+    }
+  }
+
+  return <Link getProps={isPartiallyActive} {...props} />
 }
