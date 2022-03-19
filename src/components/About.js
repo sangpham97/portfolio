@@ -11,9 +11,9 @@ export default function About() {
               hi! i'm sang
             </h4>
             <p className="text-gray-700 leading-relaxed text-lg tracking-wide">
-              Hi! Mình là Phạm Thanh Sang đang tự học và vọc vạch thiết kế web
+              Hi! Mình là Phạm Thanh Sang đang tự học và tìm hiểu lập trình web
               đặc biệt thích làm việc với
-              <span className="font-bold"> React</span>
+              <span className="font-bold"> React !</span>
             </p>
           </div>
         </div>

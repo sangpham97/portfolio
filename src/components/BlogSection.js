@@ -33,7 +33,7 @@ export default function BlogSection() {
           Blogs
         </Link>
       </Title>
-      <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-9">
         {blogs.map((item, i) => (
           <Blog {...item} key={i} />
         ))}
@@ -49,8 +49,8 @@ export const Blog = ({ title, image, slug }) => {
   const Image = getImage(image)
 
   return (
-    <Link className="col-span-1 space-y-2" to={"/Blogs/" + slug}>
-      <div className="lg:w-64 h-36">
+    <Link className="lg:col-span-1 space-y-2" to={"/Blogs/" + slug}>
+      <div className="lg:w-full h-48">
         <GatsbyImage image={Image} className="w-full h-full rounded-md" />
       </div>
       <div className="space-y-2">

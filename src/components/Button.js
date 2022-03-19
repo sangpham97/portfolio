@@ -5,7 +5,7 @@ export default function ButtonAll({ title, to }) {
   return (
     <Link
       to={to}
-      className="uppercase bg-red-400 p-3 rounded-sm text-white font-bold"
+      className="uppercase bg-green-400 p-3 rounded-md text-white font-bold hover:bg-green-600"
     >
       {title}
     </Link>

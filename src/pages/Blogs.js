@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Title from "../components/Title"
 import Layout from "../components/layout"
 import Seo from "../components/Seo"
+import { StaticImage } from "gatsby-plugin-image"
 
 export default function Blogs({ data }) {
   const blogs = data.allDatoCmsBlog.nodes
@@ -14,13 +15,10 @@ export default function Blogs({ data }) {
         title="SangBlog | Blogs"
         description="Đây là trang blog của tôi ,tất cả các blog đã làm"
       />
-      <div
-        className="mx-auto max-w-screen-lg mt-10 min-h-screen
-      
-      "
-      >
-        <div className="text-center">
+      <div className="mx-auto max-w-screen-lg mt-10 min-h-screen">
+        <div className="text-center ">
           <Title>All Blogs</Title>
+          <StaticImage src="../images/underline.jpg" className=" h-16" />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-4">
           {blogs.map((item, i) => (

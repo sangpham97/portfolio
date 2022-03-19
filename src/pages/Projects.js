@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import { Project } from "../components/ProjectSection"
 import Layout from "../components/layout"
 import Seo from "../components/Seo"
+import { StaticImage } from "gatsby-plugin-image"
 
 export default function Projects({ data }) {
   const projects = data.allDatoCmsProject.nodes
@@ -15,7 +16,8 @@ export default function Projects({ data }) {
       />
       <div className="mx-auto max-w-screen-lg">
         <div className="text-center my-10">
-          <Title>All Project</Title>
+          <Title>All Projects</Title>
+          <StaticImage src="../images/underline.jpg" className=" h-16" />
         </div>
         <div className="space-y-3">
           {projects.map((project, i) => {

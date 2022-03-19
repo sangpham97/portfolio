@@ -46,7 +46,7 @@ export default function ProjectSection() {
           return <Project {...project} key={i} git={git} Url={Url} />
         })}
       </div>
-      <div className="text-center my-10">
+      <div className="text-center my-16">
         <ButtonAll title="all project" to="/Projects" />
       </div>
     </div>
@@ -58,7 +58,7 @@ export const Project = ({ categories, title, desc, Url, git, image }) => {
   const Categories = Object.values(JSON.parse(categories))
 
   return (
-    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-start">
+    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-start lg:border-b-0 border-b-2 border-gray-200 pb-3 ">
       <a
         className="w-full h-80 lg:w-60 md:h-52"
         href={Url}
