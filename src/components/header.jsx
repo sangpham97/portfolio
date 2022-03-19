@@ -9,6 +9,8 @@ export default function Header() {
     if (isBrowser()) {
       if (link === window.location.pathname) {
         return "active_link mx-3 uppercase py-2"
+      } else {
+        return "mx-3 uppercase border_link py-2"
       }
     } else {
       return "mx-3 uppercase border_link py-2"
