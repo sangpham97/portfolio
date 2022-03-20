@@ -6,7 +6,7 @@ import "../styles/global.css"
 
 const Layout = ({ children }) => {
   return (
-    <div className="bg_all">
+    <div className="bg_all shadow-md">
       <div className="px-4 lg:px-0 ">
         <Header />
         <div

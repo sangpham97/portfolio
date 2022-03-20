@@ -4,6 +4,7 @@ import BlogSection from "../components/BlogSection"
 
 import Layout from "../components/layout"
 import ProjectSection from "../components/ProjectSection"
+import ScrollTopButton from "../components/ScrollTopButton"
 import Seo from "../components/Seo"
 
 const IndexPage = () => (
@@ -15,6 +16,7 @@ const IndexPage = () => (
     <About />
     <ProjectSection />
     <BlogSection />
+    <ScrollTopButton />
   </Layout>
 )
 

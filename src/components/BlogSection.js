@@ -33,7 +33,7 @@ export default function BlogSection() {
           Blogs
         </Link>
       </Title>
-      <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-9">
+      <div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-3">
         {blogs.map((item, i) => (
           <Blog {...item} key={i} />
         ))}

@@ -1,8 +1,9 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import React from "react"
+import React, { useState } from "react"
 import Title from "./Title"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import ButtonAll from "./Button"
+import { AiFillGithub, AiFillEye } from "react-icons/ai"
 
 export default function ProjectSection() {
   const data = useStaticQuery(graphql`
@@ -26,6 +27,7 @@ export default function ProjectSection() {
     }
   `)
   const projects = data.allDatoCmsProject.nodes
+  const [projectsLength] = useState(projects.length)
 
   return (
     <div id="Project" className="mx-auto max-w-screen-lg mt-20">
@@ -43,7 +45,16 @@ export default function ProjectSection() {
           const git = Object.values(JSON.parse(project.gitlink))
           const Url = Object.values(JSON.parse(project.url))
 
-          return <Project {...project} key={i} git={git} Url={Url} />
+          return (
+            <Project
+              {...project}
+              key={i}
+              git={git}
+              Url={Url}
+              i={i}
+              projectsLength={projectsLength}
+            />
+          )
         })}
       </div>
       <div className="text-center my-16">
@@ -53,14 +64,31 @@ export default function ProjectSection() {
   )
 }
 
-export const Project = ({ categories, title, desc, Url, git, image }) => {
+export const Project = ({
+  categories,
+  title,
+  desc,
+  Url,
+  git,
+  image,
+  i,
+  projectsLength,
+}) => {
   const Image = getImage(image)
   const Categories = Object.values(JSON.parse(categories))
 
+  const borderProject = () => {
+    if (i === projectsLength - 1) {
+      return "flex flex-col lg:flex-row lg:items-center lg:justify-start border-b-0"
+    } else {
+      return "flex flex-col lg:flex-row lg:items-center lg:justify-start lg:border-b-0 border-b-2 border-gray-200 pb-3 "
+    }
+  }
+
   return (
-    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-start lg:border-b-0 border-b-2 border-gray-200 pb-3 ">
+    <div className={borderProject()}>
       <a
-        className="w-full h-80 lg:w-60 md:h-52"
+        className="w-full h-80 lg:w-64 md:h-52"
         href={Url}
         target="_blank"
         rel="noreferrer"
@@ -72,7 +100,9 @@ export const Project = ({ categories, title, desc, Url, git, image }) => {
         />
       </a>
       <div className="space-y-2 lg:ml-10 max-w-2xl">
-        <h4 className="text-red-600 text-2xl font-mono">{title}</h4>
+        <h4 className="text-red-600 text-3xl font-bold cursor-pointer italic mt-2  lg:mt-0">
+          {title}
+        </h4>
         <p className="text-gray-700">{desc}</p>
         <ul className="flex text-white space-x-3">
           {Categories.map((item, i) => (
@@ -86,17 +116,17 @@ export const Project = ({ categories, title, desc, Url, git, image }) => {
             href={Url}
             target="_blank"
             rel="noreferrer"
-            className="text-blue-600 hover:text-blue-900 "
+            className="text-blue-600 hover:text-blue-900 flex items-center text-lg"
           >
-            Web
+            <AiFillEye className="mr-1" /> Web
           </a>
           <a
             href={git}
             target="_blank"
             rel="noreferrer"
-            className="text-blue-600 hover:text-blue-900 "
+            className="text-blue-600 hover:text-blue-900 flex items-center text-lg"
           >
-            GitHub code
+            <AiFillGithub className="mr-1" /> GitHub code
           </a>
         </div>
       </div>

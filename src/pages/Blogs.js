@@ -5,6 +5,7 @@ import Title from "../components/Title"
 import Layout from "../components/layout"
 import Seo from "../components/Seo"
 import { StaticImage } from "gatsby-plugin-image"
+import ScrollTopButton from "../components/ScrollTopButton"
 
 export default function Blogs({ data }) {
   const blogs = data.allDatoCmsBlog.nodes
@@ -15,7 +16,7 @@ export default function Blogs({ data }) {
         title="SangBlog | Blogs"
         description="Đây là trang blog của tôi ,tất cả các blog đã làm"
       />
-      <div className="mx-auto max-w-screen-lg my-20 min-h-screen">
+      <div className="mx-auto max-w-screen-lg lg:my-16 my-8 min-h-screen">
         <div className="text-center ">
           <Title>All Blogs</Title>
           <StaticImage src="../images/underline.jpg" className=" h-16" alt="" />
@@ -26,6 +27,7 @@ export default function Blogs({ data }) {
           ))}
         </div>
       </div>
+      <ScrollTopButton />
     </Layout>
   )
 }

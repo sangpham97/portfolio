@@ -5,6 +5,7 @@ import { Project } from "../components/ProjectSection"
 import Layout from "../components/layout"
 import Seo from "../components/Seo"
 import { StaticImage } from "gatsby-plugin-image"
+import ScrollTopButton from "../components/ScrollTopButton"
 
 export default function Projects({ data }) {
   const projects = data.allDatoCmsProject.nodes
@@ -15,7 +16,7 @@ export default function Projects({ data }) {
         description="Đây là trang tất cả project của tôi"
       />
       <div className="mx-auto max-w-screen-lg">
-        <div className="text-center my-20">
+        <div className="text-center lg:my-16 my-8">
           <Title>All Projects</Title>
           <StaticImage src="../images/underline.jpg" className=" h-16" alt="" />
         </div>
@@ -27,6 +28,7 @@ export default function Projects({ data }) {
           })}
         </div>
       </div>
+      <ScrollTopButton />
     </Layout>
   )
 }
