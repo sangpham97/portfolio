@@ -5,10 +5,10 @@ export const navLinks2 = [
   },
   {
     name: "Blog",
-    navigate: "/Blogs",
+    navigate: "/blogs",
   },
   {
     name: "Project",
-    navigate: "/Projects",
+    navigate: "/projects",
   },
 ]

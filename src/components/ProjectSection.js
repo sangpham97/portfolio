@@ -79,9 +79,9 @@ export const Project = ({
 
   const borderProject = () => {
     if (i === projectsLength - 1) {
-      return "flex flex-col lg:flex-row lg:items-center lg:justify-start border-b-0"
+      return "flex flex-col lg:flex-row lg:items-center lg:justify-start border-b-0 hover:shadow-lg"
     } else {
-      return "flex flex-col lg:flex-row lg:items-center lg:justify-start lg:border-b-0 border-b-2 border-gray-200 pb-3 "
+      return "flex flex-col lg:flex-row lg:items-center lg:justify-start lg:border-b-0 border-b-2 border-gray-200 pb-3 hover:shadow-lg"
     }
   }
 
@@ -99,11 +99,11 @@ export const Project = ({
           alt={title}
         />
       </a>
-      <div className="space-y-2 lg:ml-10 max-w-2xl">
+      <div className="space-y-3 lg:ml-10 max-w-2xl">
         <h4 className="text-red-600 text-3xl font-bold cursor-pointer italic mt-2  lg:mt-0">
           {title}
         </h4>
-        <p className="text-gray-700">{desc}</p>
+        <p className="text-gray-600 text-lg font-serif">{desc}</p>
         <ul className="flex text-white space-x-3">
           {Categories.map((item, i) => (
             <li key={i} className="bg-red-500 capitalize p-1 rounded-md">

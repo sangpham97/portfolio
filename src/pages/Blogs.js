@@ -34,7 +34,7 @@ export default function Blogs({ data }) {
 
 export const query = graphql`
   {
-    allDatoCmsBlog {
+    allDatoCmsBlog(limit: 3, sort: { fields: image___createdAt, order: DESC }) {
       nodes {
         date(fromNow: true)
         image {

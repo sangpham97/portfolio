@@ -59,11 +59,11 @@ export const Blog = ({ title, image, slug }) => {
       </div>
       <div className="space-y-2">
         {title.length > 65 ? (
-          <h4 className="text-red-700 text-md font-serif">
-            {`${title.substring(0, 65)}...`}
+          <h4 className="text-red-700 text-lg font-serif">
+            {`${title.substring(0, 45)}...`}
           </h4>
         ) : (
-          <h4 className="text-red-700 text-md font-serif">{title}</h4>
+          <h4 className="text-red-700 text-lg font-serif">{title}</h4>
         )}
       </div>
     </Link>
