@@ -45,10 +45,7 @@ export default function Projects({ data }) {
 
 export const query = graphql`
   {
-    allDatoCmsProject(
-      limit: 4
-      sort: { fields: image___createdAt, order: DESC }
-    ) {
+    allDatoCmsProject(sort: { fields: image___createdAt, order: DESC }) {
       nodes {
         categories
         desc
