@@ -1,5 +1,5 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import React, { useState } from "react"
+import React from "react"
 import Title from "./Title"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import ButtonAll from "./Button"
@@ -27,7 +27,6 @@ export default function ProjectSection() {
     }
   `)
   const projects = data.allDatoCmsProject.nodes
-  const [projectsLength] = useState(projects.length)
 
   return (
     <div id="Project" className="mx-auto max-w-screen-lg mt-20">
@@ -45,16 +44,7 @@ export default function ProjectSection() {
           const git = Object.values(JSON.parse(project.gitlink))
           const Url = Object.values(JSON.parse(project.url))
 
-          return (
-            <Project
-              {...project}
-              key={i}
-              git={git}
-              Url={Url}
-              i={i}
-              projectsLength={projectsLength}
-            />
-          )
+          return <Project {...project} key={i} git={git} Url={Url} />
         })}
       </div>
       <div className="text-center my-16">

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Title from "../components/Title"
 import { graphql } from "gatsby"
 import { Project } from "../components/ProjectSection"
@@ -9,6 +9,7 @@ import ScrollTopButton from "../components/ScrollTopButton"
 
 export default function Projects({ data }) {
   const projects = data.allDatoCmsProject.nodes
+  const [projectsLength] = useState(projects.length)
   return (
     <Layout>
       <Seo
@@ -24,7 +25,16 @@ export default function Projects({ data }) {
           {projects.map((project, i) => {
             const git = Object.values(JSON.parse(project.gitlink))
             const Url = Object.values(JSON.parse(project.url))
-            return <Project {...project} key={i} git={git} Url={Url} />
+            return (
+              <Project
+                {...project}
+                key={i}
+                git={git}
+                Url={Url}
+                i={i}
+                projectsLength={projectsLength}
+              />
+            )
           })}
         </div>
       </div>
